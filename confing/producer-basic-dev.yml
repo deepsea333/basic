@@ -1,0 +1,31 @@
+server:
+  port: 7100
+#  servlet:
+#    context-path: /isprot/producer-basic
+spring:
+  application:
+    name: producer-basic
+  redis:
+    cluster:
+      nodes: 192.168.10.15:7000,192.168.10.15:7001,192.168.10.15:7002,192.168.10.15:7003,192.168.10.15:7004,192.168.10.15:7005
+      # 跨集群执行命令时要遵循的最大重定向数量
+      max-redirects: 8
+    timeout: 15000ms
+    password: fitalent@qQ.
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://node1:8761/eureka/,http://node2:8762/eureka/
+#    fetch-registry: true  #缓存更新属性
+    registry-fetch-interval-seconds: 30
+
+  instance:
+    #心跳设置，告诉服务器该实例仍在使用
+    lease-renewal-interval-in-seconds: 30
+    #告诉服务器如果10秒内未发送任何续约请求，则关闭该客户端
+    lease-expiration-duration-in-seconds: 60
+
+
