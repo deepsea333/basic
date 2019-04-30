@@ -13,12 +13,7 @@ spring:
     timeout: 15000ms
     password: fitalent@qQ.
 
-  cloud:
-    config:
-      label: master
-      profile: dev
-      uri: http://localhost:8888/    
-    
+   
 
 eureka:
   client:
