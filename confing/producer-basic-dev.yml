@@ -13,6 +13,13 @@ spring:
     timeout: 15000ms
     password: fitalent@qQ.
 
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8888/    
+    
+
 eureka:
   client:
     register-with-eureka: true
@@ -28,4 +35,10 @@ eureka:
     #告诉服务器如果10秒内未发送任何续约请求，则关闭该客户端
     lease-expiration-duration-in-seconds: 60
 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
 
